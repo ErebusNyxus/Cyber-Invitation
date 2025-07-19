@@ -54,7 +54,7 @@ body {
 .navbar {
   background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-dark) 100%);
   color: var(--white);
-  padding: 15px 0;
+  padding: 15px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -139,6 +139,16 @@ body {
 .nav-button:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-heavy);
+}
+
+.theme-button-container {
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.theme-button-container .cta-button {
+    display: inline-block; /* Makes the button respect text-align */
 }
 
 /* Hamburger menu (mobile) */
