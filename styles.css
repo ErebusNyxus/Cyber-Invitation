@@ -562,26 +562,31 @@ body {
         .filter-buttons {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 12px;
             margin-bottom: 3rem;
             flex-wrap: wrap;
+            width: 100%;
+            padding: 10px 20px;
         }
 
         .filter-btn {
             background: white;
             border: 2px solid #e2e8f0;
             color: #64748b;
-            padding: 0.5rem 1.5rem;
+            padding: 10px 20px;
             border-radius: 25px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
         }
 
         .filter-btn:hover,
         .filter-btn.active {
-            background: #2563eb;
-            border-color: #2563eb;
+            background: #000000;
+            border-color: #000000;
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
@@ -988,6 +993,7 @@ body {
   background: var(--accent-color);
   color: var(--white);
   padding: 40px 0;
+  margin-top: 20px;
   text-align: center;
 }
 
