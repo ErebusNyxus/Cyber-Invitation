@@ -51,6 +51,46 @@ body {
   padding: 0 20px;
 }
 
+
+.fitur-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.fitur-item {
+  background-color: #bdeae8;
+  border-radius: 12px;
+  padding: 24px 16px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.fitur-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.fitur-item i {
+  width: 36px;
+  height: 36px;
+  color: #003333;
+  margin-bottom: 12px;
+}
+
+.fitur-item p {
+  color: #003333;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+
 /* ================== NAVIGATION BAR ================== */
 .navbar {
   background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-dark) 100%);
@@ -1099,6 +1139,11 @@ body {
     margin-bottom: 20px;
     text-align: center;
   }
+
+  .fitur-container {
+    grid-template-columns: 1fr 1fr;
+    padding: 10px 15px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1128,5 +1173,10 @@ body {
     font-size: 2rem;
     margin-bottom: 20px;
     text-align: center;
+  }
+
+  .fitur-container {
+    grid-template-columns: 1fr;
+    padding: 10px 15px;
   }
 }

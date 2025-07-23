@@ -6,6 +6,7 @@
     <title>Cyber Invitation - Undangan Digital Website Terbaik</title>
     <meta name="description" content="Buat undangan digital kekinian dengan harga terjangkau. Fitur lengkap: custom nama tamu, tema beragam, RSVP, amplop digital, dan banyak lagi.">
     <meta name="keywords" content="undangan digital, undangan online, wedding invitation, undangan pernikahan, cyber invitation">
+    <script src="https://unpkg.com/lucide@latest"></script>
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -25,7 +26,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
+</head> <!-- Closing head tag added here -->
 
+<body> <!-- Body tag added here -->
 <!-- Navigation Bar -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="navbar-container">
@@ -211,28 +214,48 @@
     </section>
 
     <!-- Complete Features -->
-    <section class="complete-features" aria-labelledby="complete-features-title">
-        <div class="container">
-            <h2 id="complete-features-title" class="section-title">Undangan Digital Dengan Fitur yang Lengkap</h2>
-            <p class="section-subtitle">Semua fitur yang Anda butuhkan untuk membuat undangan digital yang sempurna</p>
-            <div class="features-list">
-                <div class="feature-item loading">Custom Nama Tamu Undangan</div>
-                <div class="feature-item loading">Custom Musik Latar</div>
-                <div class="feature-item loading">Tema Lengkap Bisa Custom</div>
-                <div class="feature-item loading">Form RSVP & Ucapan</div>
-                <div class="feature-item loading">Amplop Digital & Tanda Kasih</div>
-                <div class="feature-item loading">Hitung Mundur Waktu Acara</div>
-                <div class="feature-item loading">Galeri Foto & Video</div>
-                <div class="feature-item loading">Integrasi Google Maps</div>
-                <div class="feature-item loading">Informasi Live Streaming</div>
-                <div class="feature-item loading">QR Code Check-In Acara</div>
-                <div class="feature-item loading">Layar Sapa & Check-In Counter</div>
-                <div class="feature-item loading">Kirim Undangan Pake HP</div>
-                <div class="feature-item loading">Beragam Tata Letak Halaman</div>
-                <div class="feature-item loading">Ubah Warna & Ukuran Font</div>
-            </div>
-        </div>
-    </section>
+     <div class="fitur-container">
+    <div class="fitur-item">
+      <i data-lucide="contact"></i>
+      <p>Custom Nama Tamu</p>
+    </div>
+    <div class="fitur-item">
+      <i data-lucide="music"></i>
+      <p>Custom Music Latar</p>
+    </div>
+    <div class="fitur-item">
+      <i data-lucide="message-square-text"></i>
+      <p>RSVP & Ucapan</p>
+    </div>
+    <div class="fitur-item">
+      <i data-lucide="wallet-cards"></i>
+      <p>Amplop Digital</p>
+    </div>
+    <div class="fitur-item">
+      <i data-lucide="clock"></i>
+      <p>Count Down Timer</p>
+    </div>
+    <div class="fitur-item">
+      <i data-lucide="image"></i>
+      <p>Galeri Foto & Video</p>
+    </div>
+    <div class="fitur-item">
+      <i data-lucide="map-pin"></i>
+      <p>Integrasi Google Maps</p>
+    </div>
+    <div class="fitur-item">
+      <i data-lucide="play-circle"></i>
+      <p>Info Live Streaming</p>
+    </div>
+    <div class="fitur-item">
+      <i data-lucide="qr-code"></i>
+      <p>QR Code Checkin Acara</p>
+    </div>
+    <div class="fitur-item">
+      <i data-lucide="rss"></i>
+      <p>Layar Sapa Real Time</p>
+    </div>
+  </div>
 
     <!-- How to Order -->
     <section class="how-to-order" aria-labelledby="how-to-order-title" id="how-to-order">
@@ -421,6 +444,8 @@
                 }
             });
         });
+
+        lucide.createIcons();
     </script>
 </body>
 </html>
