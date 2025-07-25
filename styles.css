@@ -1141,7 +1141,7 @@ body {
   }
 
   .fitur-container {
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 1fr 1fr;
     padding: 10px 15px;
   }
 }
@@ -1176,7 +1176,7 @@ body {
   }
 
   .fitur-container {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     padding: 10px 15px;
   }
 }
