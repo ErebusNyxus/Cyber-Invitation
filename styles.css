@@ -600,11 +600,11 @@ body {
 
         /* Filter Buttons */
         .filter-buttons {
-            display: flex;
+            display: grid;
             justify-content: center;
             gap: 12px;
             margin-bottom: 3rem;
-            flex-wrap: wrap;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             width: 100%;
             padding: 10px 20px;
         }
@@ -614,7 +614,7 @@ body {
             border: 2px solid #e2e8f0;
             color: #64748b;
             padding: 10px 20px;
-            border-radius: 25px;
+            border-radius: 5px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 500;
