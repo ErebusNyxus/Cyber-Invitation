@@ -28,6 +28,10 @@
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* ================== BASE STYLES ================== */
 * {
   margin: 0;
@@ -159,12 +163,12 @@ body {
   width: 100%;
 }
 
-/* Navigation button */
+/* Navigation button | Hubungi Kami Button */
 .nav-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-dark));
   color: var(--white);
   padding: 10px 20px;
   border-radius: 50px;
@@ -178,8 +182,7 @@ body {
 }
 
 .nav-button:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-heavy);
+  transform: translateY(-1px);
 }
 
 .theme-button-container {
@@ -215,7 +218,7 @@ body {
 }
 
 /* ================== MOBILE NAVIGATION ================== */
-.mobile-nav {
+.mobile-nav{
   position: fixed;
   top: 0;
   right: -100%;
@@ -230,6 +233,11 @@ body {
 
 .mobile-nav.active {
   right: 0;
+}
+
+.mobile-nav-links::selection {
+  background: rgb(199, 162, 0);
+  color: var(--black);
 }
 
 .mobile-nav-links {
@@ -254,6 +262,14 @@ body {
 
 .mobile-nav-links a:hover {
   background: rgba(255,255,255,0.1);
+}
+
+.mobile-nav-links a:active,
+.mobile-nav-links a.active-link {
+  background: rgb(255, 255, 255);
+  color: var(--black);
+  font-weight: bold;
+  font-style: italic;
 }
 
 .close-btn {
@@ -1180,3 +1196,6 @@ body {
     padding: 10px 15px;
   }
 }
+
+
+

@@ -397,53 +397,76 @@
             });
         });
         
-        // Mobile menu functionality
-        const hamburger = document.querySelector('.hamburger');
-        const mobileNav = document.querySelector('.mobile-nav');
-        const overlay = document.querySelector('.overlay');
-        const closeBtn = document.querySelector('.close-btn');
+      // Mobile menu functionality
+const hamburger = document.querySelector('.hamburger');
+const mobileNav = document.querySelector('.mobile-nav');
+const overlay = document.querySelector('.overlay');
+const closeBtn = document.querySelector('.close-btn');
+const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+
+hamburger.addEventListener('click', () => {
+    mobileNav.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+
+closeBtn.addEventListener('click', () => {
+    mobileNav.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+});
+
+overlay.addEventListener('click', () => {
+    mobileNav.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+});
+
+// Handle link clicks
+mobileLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        // Prevent default if it's an anchor link
+        if (this.getAttribute('href').startsWith('#')) {
+            e.preventDefault();
+            
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        }
         
-        hamburger.addEventListener('click', () => {
-            mobileNav.classList.add('active');
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
-        });
+        // Close mobile menu
+        mobileNav.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
         
-        closeBtn.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = ''; // Enable scrolling
-        });
+        // Remove active class from all links
+        mobileLinks.forEach(l => l.classList.remove('active-link'));
         
-        overlay.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = ''; // Enable scrolling
+        // Add active class to clicked link
+        this.classList.add('active-link');
+    });
+});
+
+// Optional: Set initial active link based on current URL
+function setActiveLink() {
+    const currentHash = window.location.hash;
+    if (currentHash) {
+        mobileLinks.forEach(link => {
+            link.classList.remove('active-link');
+            if (link.getAttribute('href') === currentHash) {
+                link.classList.add('active-link');
+            }
         });
-        
-        // Close mobile menu when clicking on links
-        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileNav.classList.remove('active');
-                overlay.classList.remove('active');
-                document.body.style.overflow = ''; // Enable scrolling
-            });
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80, // Account for navbar height
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+    }
+}
+
+// Call on page load and when hash changes
+window.addEventListener('load', setActiveLink);
+window.addEventListener('hashchange', setActiveLink);
 
         lucide.createIcons();
     </script>
