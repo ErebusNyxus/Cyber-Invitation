@@ -620,7 +620,7 @@ body {
             justify-content: center;
             gap: 12px;
             margin-bottom: 3rem;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             width: 100%;
             padding: 10px 20px;
         }
@@ -1195,7 +1195,12 @@ body {
     grid-template-columns: 1fr 1fr;
     padding: 10px 15px;
   }
+
+  .filter-buttons {
+            display: grid;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 3rem;
+            grid-template-columns: 1fr 1fr;
 }
-
-
-
+}
