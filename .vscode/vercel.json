@@ -1,11 +1,9 @@
 {
-  "routes": [
+  "cleanUrls": true,
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/$1.html",
-      "headers": {
-        "Content-Type": "text/html"
-      }
+      "source": "/(.*)",
+      "destination": "/$1.html"
     }
   ]
 }
