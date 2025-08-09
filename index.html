@@ -469,6 +469,20 @@ window.addEventListener('load', setActiveLink);
 window.addEventListener('hashchange', setActiveLink);
 
         lucide.createIcons();
+
+        document.addEventListener('DOMContentLoaded', function() {
+  // Remove .html from all internal links
+  document.querySelectorAll('a[href$=".html"]').forEach(link => {
+    link.href = link.href.replace('.html', '');
+  });
+
+  // Handle back/forward navigation
+  window.addEventListener('popstate', function() {
+    if (window.location.href.includes('.html')) {
+      window.history.replaceState({}, '', window.location.href.replace('.html', ''));
+    }
+  });
+});
     </script>
 </body>
 </html>
