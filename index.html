@@ -7,7 +7,8 @@
     <meta name="description" content="Buat undangan digital kekinian dengan harga terjangkau. Fitur lengkap: custom nama tamu, tema beragam, RSVP, amplop digital, dan banyak lagi.">
     <meta name="keywords" content="undangan digital, undangan online, wedding invitation, undangan pernikahan, cyber invitation">
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Cyber Invitation - Undangan Digital Website">
@@ -62,6 +63,10 @@
     <div class="mobile-nav">
         <button class="close-btn" aria-label="Close navigation menu">×</button>
         <ul class="mobile-nav-links" role="menu">
+             <div style="display: flex; margin-left: 10px; margin-top: 20px;" class="logo-name">
+             <img style="width: 52px; height: 52px; border-radius: 100%; margin-bottom: 14px;" src="/images/CyberInv.Png" alt="">
+             <p style="display: flex; color: white; margin-top: 10px; margin-left: 8px;">Cyber Invitations</p>
+             </div>
             <li role="none"><a href="index.html#home" role="menuitem">Beranda</a></li>
             <li role="none"><a href="index.html#features" role="menuitem">Fitur</a></li>
             <li role="none"><a href="index.html#themes" role="menuitem">Tema</a></li>
@@ -339,136 +344,57 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Cyber Invitation. All rights reserved.</p>
+     <footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Cyber Invitation</h3>
+                <p>Membuat undangan digital yang indah untuk pernikahan, ulang tahun, dan acara spesial di seluruh Indonesia.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/cyber_invitation/" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/6287845287592" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@cyber.invitation?_t=ZS-8ymUFgvVO2W&_r=1" target="_blank" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Tautan Cepat</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Produk</a></li>
+                    <li><a href="#">Harga</a></li>
+                    <li><a href="#">Cara Pesan</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Dukungan</h3>
+                <ul class="footer-links">
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Hubungi Kami</a></li>
+                    <li><a href="#">Kebijakan Privasi</a></li>
+                    <li><a href="#">Syarat & Ketentuan</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Kontak Kami</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-envelope"></i> cyberinvitations@gmail.com</li>
+                    <li><i class="fas fa-phone"></i> +62 878-4528-7592</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Banjarmasin, Kalimantan Selatan</li>
+                </ul>
+            </div>
         </div>
-    </footer>
+        <div class="copyright">
+            <p>&copy; <span id="current-year">2025</span> Cyber Invitation. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 
-    <script>
-         let selectedPackage = null;
-
-        function selectPackage(packageName) {
-            // Remove selected class from all cards
-            document.querySelectorAll('.pricing-card').forEach(card => {
-                card.classList.remove('selected');
-            });
-            
-            // Add selected class to clicked card
-            const selectedCard = document.querySelector(`[data-package="${packageName}"]`);
-            selectedCard.classList.add('selected');
-            
-            // Store selected package
-            selectedPackage = packageName;
-            
-            // Optional: You can add additional logic here
-            console.log(`Selected package: ${packageName}`);
-            
-            // Redirect to WhatsApp with selected package
-            const whatsappMessages = {
-            'standar': 'Halo%20Admin%20Arka%2C%20saya%20mau%20order%20Paket%20Standar.%20Mohon%20informasikan%20detail%20dan%20cara%20pembayarannya%20ya.%20Terima%20kasih.',
-            'mewah': 'Halo%20Admin%20Arka%2C%20saya%20mau%20order%20Paket%20Mewah.%20Mohon%20informasikan%20detail%20lengkap%20dan%20langkah%20pembayarannya.%20Terima%20kasih%20banyak.',
-            'express': 'Halo%20Admin%20Arka%2C%20saya%20mau%20order%20Paket%20Express.%20Mohon%20info%20detail%20layanan%20dan%20cara%20pembayarannya.%20Terima%20kasih.'
-        };
-
-            
-            const whatsappUrl = `https://api.whatsapp.com/send/?phone=%2B6287845287592&text=${whatsappMessages[packageName]}&type=phone_number&app_absent=0`;
-            window.open(whatsappUrl, '_blank');
-        }
-
-        // Add click event listeners to cards for better UX
-        document.querySelectorAll('.pricing-card').forEach(card => {
-            card.addEventListener('click', function(e) {
-                // Don't trigger if button was clicked
-                if (e.target.classList.contains('pricing-button')) {
-                    return;
-                }
-                
-                const packageName = this.dataset.package;
-                
-                // Remove selected class from all cards
-                document.querySelectorAll('.pricing-card').forEach(c => {
-                    c.classList.remove('selected');
-                });
-                
-                // Add selected class to clicked card
-                this.classList.add('selected');
-                selectedPackage = packageName;
-            });
-        });
-        
-      // Mobile menu functionality
-const hamburger = document.querySelector('.hamburger');
-const mobileNav = document.querySelector('.mobile-nav');
-const overlay = document.querySelector('.overlay');
-const closeBtn = document.querySelector('.close-btn');
-const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
-
-hamburger.addEventListener('click', () => {
-    mobileNav.classList.add('active');
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-});
-
-closeBtn.addEventListener('click', () => {
-    mobileNav.classList.remove('active');
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
-});
-
-overlay.addEventListener('click', () => {
-    mobileNav.classList.remove('active');
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
-});
-
-// Handle link clicks
-mobileLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-        // Prevent default if it's an anchor link
-        if (this.getAttribute('href').startsWith('#')) {
-            e.preventDefault();
-            
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        }
-        
-        // Close mobile menu
-        mobileNav.classList.remove('active');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-        
-        // Remove active class from all links
-        mobileLinks.forEach(l => l.classList.remove('active-link'));
-        
-        // Add active class to clicked link
-        this.classList.add('active-link');
-    });
-});
-
-// Optional: Set initial active link based on current URL
-function setActiveLink() {
-    const currentHash = window.location.hash;
-    if (currentHash) {
-        mobileLinks.forEach(link => {
-            link.classList.remove('active-link');
-            if (link.getAttribute('href') === currentHash) {
-                link.classList.add('active-link');
-            }
-        });
-    }
-}
-
-// Call on page load and when hash changes
-window.addEventListener('load', setActiveLink);
-window.addEventListener('hashchange', setActiveLink);
-
-        lucide.createIcons();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
