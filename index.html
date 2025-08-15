@@ -344,7 +344,7 @@
     </section>
 
     <!-- Footer -->
-     <footer>
+<footer>
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col">
@@ -374,10 +374,10 @@
             <div class="footer-col">
                 <h3>Dukungan</h3>
                 <ul class="footer-links">
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Hubungi Kami</a></li>
-                    <li><a href="#">Kebijakan Privasi</a></li>
-                    <li><a href="#">Syarat & Ketentuan</a></li>
+                    <li><a href="#" onclick="openModal('faq'); return false;">FAQ</a></li>
+                    <li><a href="#" onclick="openModal('hubungi'); return false;">Hubungi Kami</a></li>
+                    <li><a href="#" onclick="openModal('privasi'); return false;">Kebijakan Privasi</a></li>
+                    <li><a href="#" onclick="openModal('syarat'); return false;">Syarat & Ketentuan</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -394,6 +394,95 @@
         </div>
     </div>
 </footer>
+
+<!-- Modal -->
+<div id="infoModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modalBody"></div>
+    </div>
+</div>
+
+<style>
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        padding-top: 80px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    .modal-content {
+        background-color: #1e2a38;
+        color: white;
+        margin: auto;
+        padding: 20px;
+        border-radius: 8px;
+        width: 85%;
+        max-width: 600px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        animation: fadeIn 0.3s ease-in-out;
+    }
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        cursor: pointer;
+    }
+    .close:hover {
+        color: white;
+    }
+    @keyframes fadeIn {
+        from {opacity: 0; transform: scale(0.95);}
+        to {opacity: 1; transform: scale(1);}
+    }
+</style>
+
+<script>
+    const modalContent = {
+        faq: `
+            <h2>FAQ</h2>
+            <p><strong>Pertanyaan:</strong> Apakah undangan ini bisa diakses tanpa internet?</p>
+            <p><strong>Jawaban:</strong> Tidak, undangan ini memerlukan koneksi internet.</p>
+            <p><strong>Pertanyaan:</strong> Apakah undangan bisa diubah?</p>
+            <p><strong>Jawaban:</strong> Ya, Anda dapat menghubungi kami untuk perubahan konten.</p>
+        `,
+        hubungi: `
+            <h2>Hubungi Kami</h2>
+            <p>Email: <a href="mailto:cyberinvitations@gmail.com" style="color:#9ecfff;">cyberinvitations@gmail.com</a></p>
+            <p>WhatsApp: <a href="https://wa.me/6287845287592" target="_blank" style="color:#9ecfff;">+62 878-4528-7592</a></p>
+            <p>Alamat: Banjarmasin, Kalimantan Selatan</p>
+        `,
+        privasi: `
+            <h2>Kebijakan Privasi</h2>
+            <p>Kami menjaga privasi data tamu. Informasi yang Anda berikan hanya digunakan untuk keperluan acara dan tidak akan dibagikan ke pihak ketiga tanpa izin Anda.</p>
+        `,
+        syarat: `
+            <h2>Syarat & Ketentuan</h2>
+            <p>Dengan menggunakan undangan ini, Anda setuju untuk mematuhi semua ketentuan yang berlaku, termasuk penggunaan informasi yang sesuai dan tidak melanggar hukum yang berlaku di Indonesia.</p>
+        `
+    };
+
+    function openModal(type) {
+        document.getElementById("modalBody").innerHTML = modalContent[type];
+        document.getElementById("infoModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("infoModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target === document.getElementById("infoModal")) {
+            closeModal();
+        }
+    }
+</script>
+
 
     <script src="script.js"></script>
 </body>
