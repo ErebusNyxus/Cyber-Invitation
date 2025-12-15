@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="id">
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1MJWTT86HW"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-1MJWTT86HW');
+</script>
+
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -426,72 +436,73 @@
         </div>
     </footer>
 
-<!-- Modal -->
-<div id="infoModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <div id="modalBody"></div>
+    <!-- Modal -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
     </div>
-</div>
 
-<style>
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 9999;
-        padding-top: 80px;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-
-    .modal-content {
-        background-color: #1e2a38;
-        color: white;
-        margin: auto;
-        padding: 20px;
-        border-radius: 8px;
-        width: 85%;
-        max-width: 600px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-        animation: fadeIn 0.3s ease-in-out;
-        max-height: 80vh;
-        overflow-y: auto;
-    }
-
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        cursor: pointer;
-    }
-
-    .close:hover {
-        color: white;
-    }
-
-    ol {
-        padding-left: 20px;
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: scale(0.95);
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 80px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
         }
-        to {
-            opacity: 1;
-            transform: scale(1);
-        }
-    }
-</style>
 
-<script>
-    const modalContent = {
-        faq: `
+        .modal-content {
+            background-color: #1e2a38;
+            color: white;
+            margin: auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 85%;
+            max-width: 600px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 0.3s ease-in-out;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: white;
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+
+    <script>
+        const modalContent = {
+            faq: `
             <h2>FAQ</h2>
             <p><strong>P:</strong> Bisa diakses tanpa internet?</p>
             <p><strong>J:</strong> Tidak, memerlukan koneksi internet.</p>
@@ -500,14 +511,14 @@
             <p><strong>P:</strong> Ada fitur RSVP?</p>
             <p><strong>J:</strong> Ya, tersedia konfirmasi kehadiran dan kolom ucapan.</p>
         `,
-        privasi: `
+            privasi: `
             <h2>Kebijakan Privasi</h2>
             <p>Kami mengumpulkan data seperti nama, email, dan detail acara hanya untuk pengelolaan undangan.</p>
             <p>Data tidak dibagikan ke pihak ketiga tanpa izin Anda.</p>
             <p>Kami menggunakan cookies untuk memudahkan navigasi.</p>
             <p>Hubungi kami di <a href="mailto:cyberinvitations@gmail.com">cyberinvitations@gmail.com</a> untuk pertanyaan privasi.</p>
         `,
-        syarat: `
+            syarat: `
             <h2>Syarat & Ketentuan</h2>
             <ol>
                 <li>Layanan: Pembuatan undangan digital berupa website.</li>
@@ -517,23 +528,23 @@
                 <li>Hak Cipta: Semua desain milik Cyber Invitation, lisensi hanya untuk penggunaan.</li>
             </ol>
         `
-    };
+        };
 
-    function openModal(type) {
-        document.getElementById("modalBody").innerHTML = modalContent[type];
-        document.getElementById("infoModal").style.display = "block";
-    }
-
-    function closeModal() {
-        document.getElementById("infoModal").style.display = "none";
-    }
-
-    window.onclick = function (event) {
-        if (event.target === document.getElementById("infoModal")) {
-            closeModal();
+        function openModal(type) {
+            document.getElementById("modalBody").innerHTML = modalContent[type];
+            document.getElementById("infoModal").style.display = "block";
         }
-    }
-</script>
+
+        function closeModal() {
+            document.getElementById("infoModal").style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target === document.getElementById("infoModal")) {
+                closeModal();
+            }
+        }
+    </script>
 
 
     <script src="script.js"></script>
